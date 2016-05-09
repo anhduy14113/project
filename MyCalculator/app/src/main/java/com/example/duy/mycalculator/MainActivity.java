@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     Button button0 , button1 , button2 , button3 , button4 , button5 , button6 ,
@@ -12,6 +13,7 @@ public class MainActivity extends AppCompatActivity {
             buttonMul , button10 , buttonC , buttonEqual ;
 
     EditText edt1 ;
+    TextView rs;
 
     float mValueOne , mValueTwo ;
 
@@ -40,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
         buttonC = (Button) findViewById(R.id.btnClear);
         buttonEqual = (Button) findViewById(R.id.btnEqual);
         edt1 = (EditText) findViewById(R.id.edt);
+        rs = (TextView) findViewById(R.id.result);
 
 
         button1.setOnClickListener(new View.OnClickListener() {
@@ -179,6 +182,7 @@ public class MainActivity extends AppCompatActivity {
                     edt1.setText(mValueOne / mValueTwo+"");
                     mDivision=false;
                 }
+                rs.setText(edt1.getText());
             }
         });
 
@@ -186,6 +190,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 edt1.setText("");
+                rs.setText("0");
             }
         });
 
